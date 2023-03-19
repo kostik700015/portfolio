@@ -13,8 +13,8 @@ import Contacts from './components/Contacts/Contacts'
 function App() {
 
   const [projectData, setProjectData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(null);
   const isCancelled = React.useRef(false);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
   }, [projectData]);
 
   const getResults = async () => {
-    setLoading(true);
+    // setLoading(true);
     try {
       await fetch('https://api.airtable.com/v0/appX3Jv05v6mDxW8U/Table%201?api_key=keyHoZe6iixLcTeeA')
 			.then(res => res.json())
@@ -37,9 +37,9 @@ function App() {
         }
 			})
     } catch (err) {
-      setError(err);
+      // setError(err);
     }
-    setLoading(false);
+    // setLoading(false);
   };
 
   console.log(projectData)
